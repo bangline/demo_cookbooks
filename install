@@ -1,0 +1,16 @@
+#!/bin/bash
+
+sudo apt-get install git -y -q
+sudo apt-get install ruby -y -q
+sudo apt-get install rubygems -y -q
+sudo apt-get install irb -y -q
+sudo apt-get install rake -y -q
+sudo apt-get install curl -y -q
+sudo gem install chef --no-ri --no-rdoc
+sudo gem install mysql --no-ri --no-rdoc
+
+git clone git@github.com:bangline/demo_cookbooks.git /tmp/chef_run
+
+cd /tmp/chef_run
+
+sudo /var/lib/gems/1.8/bin/chef-solo -c /tmp/chef_run/solo.rb -j /tmp/chef_run/node.json

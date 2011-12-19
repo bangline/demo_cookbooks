@@ -1,0 +1,4 @@
+{
+  "temp_dir":"/tmp",
+  "run_list":["recipe[main]"]
+}
